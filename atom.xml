@@ -4,7 +4,7 @@
   <subtitle><![CDATA[记录点滴生活]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://junzhengdi.github.io/"/>
-  <updated>2015-04-26T10:18:30.000Z</updated>
+  <updated>2015-04-27T13:05:36.000Z</updated>
   <id>http://junzhengdi.github.io/</id>
   
   <author>
@@ -13,6 +13,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[git服务总结]]></title>
+    <link href="http://junzhengdi.github.io/2015/04/27/git%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BB%93/"/>
+    <id>http://junzhengdi.github.io/2015/04/27/git服务总结/</id>
+    <published>2015-04-27T12:59:39.000Z</published>
+    <updated>2015-04-27T13:05:36.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="git服务位置">git服务位置</h3><ul>
+<li>git安装在小机房：192.168.1.67 root/rootroot</li>
+<li>新建一个用户git,checkin checkout都用这个用户操作，请确保git代码目录的归属权是git而不是root</li>
+<li>代码根目录  /opt/git/</li>
+</ul>
+<h3 id="在服务器上安装git">在服务器上安装git</h3><ul>
+<li>安装准备的软件<br><code>$ yum -y install zlib-devel openssl-devel perl cpio expat-devel gettext-devel openssl zlib curl autoconf tk</code></li>
+<li>下载git源码<br><code>$ wget https://github.com/git/git/archive/master.zip</code></li>
+<li>解压<br><code>$ unzip master</code></li>
+<li><code>$ cd git-master/</code></li>
+<li><code>$ autoconf</code></li>
+<li><code>$ ./configure</code></li>
+<li><code>$ make</code></li>
+<li><code>$ make install</code><br>make和make install在这里最好分开执行,免得有错不知道.</li>
+<li><code>$ git --version</code><br><code>git version 2.0.0.GIT</code></li>
+</ul>
+<p>安装完毕</p>
+<h3 id="在服务器上git的权限管理及建立仓库">在服务器上git的权限管理及建立仓库</h3><ul>
+<li>创建一个git用户，用来运行git<br><code>$ adduser git</code></li>
+<li>创建证书登录<br>收集所有需要登录的用户的公钥，就是他们自己的id_rsa.pub文件，把所有公钥导入到/home/git/.ssh/authorized_keys文件里，一行一个。<br>例如，我的公钥在我本地的电脑C:\Users\dijunzheng.ssh\id_rsa.pub 中，打开该文件，copy文本加入上述文件即可</li>
+<li>初始化Git仓库：<br>先选定一个目录作为Git仓库，假定是/opt/git/learngit.git，在/opt/git/目录下输入命令：<br><code>$ sudo git init --bare learngit.git</code><br>Git就会创建一个裸仓库，裸仓库没有工作区，因为服务器上的Git仓库纯粹是为了共享，所以不让用户直接登录到服务器上去改工作区，并且服务器上的Git仓库通常都以.git结尾。然后，把owner改为git：<br><code>$ sudo chown -R git:git learngit.git</code></li>
+<li>禁用shell登录：<br>出于安全考虑，第二步创建的git用户不允许登录shell，这可以通过编辑/etc/passwd文件完成。找到类似下面的一行：<br><code>git:x:1001:1001:,,,:/home/git:/bin/bash</code><br>改为：<br><code>git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell</code><br>这样，git用户可以正常通过ssh使用git，但无法登录shell，因为我们为git用户指定的git-shell每次一登录就自动退出。</li>
+<li>管理公钥<br>如果团队很小，把每个人的公钥收集起来放到服务器的/home/git/.ssh/authorized_keys文件里就是可行的。如果团队有几百号人，就没法这么玩了，这时，可以用Gitosis来管理公钥。<br>这里我们不介绍怎么玩Gitosis了，几百号人的团队基本都在500强了，相信找个高水平的Linux管理员问题不大。</li>
+<li>管理权限<br>有很多不但视源代码如生命，而且视员工为窃贼的公司，会在版本控制系统里设置一套完善的权限控制，每个人是否有读写权限会精确到每个分支甚至每个目录下。因为Git是为Linux源代码托管而开发的，所以Git也继承了开源社区的精神，不支持权限控制。不过，因为Git支持钩子（hook），所以，可以在服务器端编写一系列脚本来控制提交等操作，达到权限控制的目的。Gitolite就是这个工具。<br>这里我们也不介绍Gitolite了，不要把有限的生命浪费到权限斗争中。</li>
+<li>小结<br>搭建Git服务器非常简单，通常10分钟即可完成；<br>要方便管理公钥，用Gitosis；<br>要像SVN那样变态地控制权限，用Gitolite。</li>
+</ul>
+<h3 id="从服务器上下载（clone）代码">从服务器上下载（clone）代码</h3><ul>
+<li>首先 cd 到你的workspace，例如我的是/d/mywork/</li>
+<li>然后克隆代码<br><code>$ git clone git@192.168.1.67:/opt/git/learngit.git learngit</code><br>注：learngit是自己重命名的代码目录，这样就在我的/d/mywork/learngit目录下面生成具体的代码文件</li>
+</ul>
+<h3 id="git_创建裸仓库，将项目变为git可管理的仓库">git 创建裸仓库，将项目变为git可管理的仓库</h3><p>通过git init命令把这个目录变成Git可以管理的仓库：</p>
+<p>$ cd d:/mywork/training4g/  ###进入到项目根目录$ git init<br>Initialized empty Git repository in d:/mywork/training4g/.git/</p>
+<h3 id="程序员如何利用git提交代码">程序员如何利用git提交代码</h3><ul>
+<li>将本地库与远程库关联<br><code>$ git remote add origin git@192.168.1.67:/opt/git/learngit.git</code><br>注：origin是远程库的名称，如果你的远程库已存在（例如github已占用），请自行改成其他的名字。</li>
+<li>把本地库的所有内容推送到远程库上：<br><code>$ git push -u origin master</code><br>把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。<br>由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。<br><code>$ git push origin master</code></li>
+</ul>
+<h3 id="推送分支">推送分支</h3><p>推送到远程的master分支<br><code>$ git push origin master</code><br>如果要推送其他分支，比如dev，就改成：<br><code>$ git push origin dev</code></p>
+<p>但是，并不是一定要把本地分支往远程推送，那么，哪些分支需要推送，哪些不需要呢？</p>
+<ul>
+<li>master分支是主分支，因此要时刻与远程同步</li>
+<li>dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；</li>
+<li>bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；</li>
+<li>feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</li>
+</ul>
+<h3 id="查看分支">查看分支</h3><p><code>$ git branch</code></p>
+<h3 id="抓取分支">抓取分支</h3><p>从远程服务器，抓取当前分支，同步到本地，相当于svn的update<br><code>$ git pull</code><br>注：从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。</p>
+<h3 id="查看远程版本">查看远程版本</h3><p><code>$ git remote -v</code></p>
+<p>未完待续</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="git服务位置">git服务位置</h3><ul>
+<li>git安装在小机房：192.168.1.67 root/rootroot</li>
+<li>新建一个用户git,checkin checkout都用这个用户操作，请确保git代码目录的归属权是git而不是]]>
+    </summary>
+    
+      <category term="git" scheme="http://junzhengdi.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[别做正常的傻瓜-读书笔记1]]></title>
