@@ -4,7 +4,7 @@
   <subtitle><![CDATA[记录点滴生活]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://junzhengdi.github.io/"/>
-  <updated>2015-04-27T13:05:36.000Z</updated>
+  <updated>2015-04-27T13:24:40.000Z</updated>
   <id>http://junzhengdi.github.io/</id>
   
   <author>
@@ -13,6 +13,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Git全局ignore配置]]></title>
+    <link href="http://junzhengdi.github.io/2015/04/27/Git%E5%85%A8%E5%B1%80ignore%E9%85%8D%E7%BD%AE/"/>
+    <id>http://junzhengdi.github.io/2015/04/27/Git全局ignore配置/</id>
+    <published>2015-04-27T13:24:06.000Z</published>
+    <updated>2015-04-27T13:24:40.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="-gitconfig文件">.gitconfig文件</h2><ul>
+<li>git默认将全局配置放在当前用户目录下的.gitconfig文件，例如：C:/Users/dijunzheng/.gitconfig </li>
+<li>编辑，在后边加上</li>
+</ul>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[core]   </span><br><span class="line">excludesfile =<span class="constant">C</span><span class="symbol">:/Users/dijunzheng/</span>.gitignore_global</span><br></pre></td></tr></table></figure>
+<h2 id="-gitignore_global">.gitignore_global</h2><ul>
+<li>新建并配置.gitignore_global，目录就是提到的目录</li>
+<li>可能要用git命令 touch .gitignore_global</li>
+<li>内容</li>
+</ul>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">.settings/</span></span><br><span class="line"><span class="title">.svn/</span></span><br><span class="line">bin/</span><br><span class="line"><span class="title">.class</span></span><br><span class="line">logs/</span><br></pre></td></tr></table></figure>
+<h2 id="齐活儿">齐活儿</h2>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="-gitconfig文件">.gitconfig文件</h2><ul>
+<li>git默认将全局配置放在当前用户目录下的.gitconfig文件，例如：C:/Users/dijunzheng/.gitconfig </li>
+<li>编辑，在后边加上</li>
+<]]>
+    </summary>
+    
+      <category term="git" scheme="http://junzhengdi.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[git服务总结]]></title>
