@@ -4,7 +4,7 @@
   <subtitle><![CDATA[记录点滴生活]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://junzhengdi.github.io/"/>
-  <updated>2015-04-27T13:24:40.000Z</updated>
+  <updated>2015-04-27T13:34:00.000Z</updated>
   <id>http://junzhengdi.github.io/</id>
   
   <author>
@@ -13,6 +13,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[在github上搭建博客]]></title>
+    <link href="http://junzhengdi.github.io/2015/04/27/%E5%9C%A8github%E4%B8%8A%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://junzhengdi.github.io/2015/04/27/在github上搭建博客/</id>
+    <published>2015-04-27T13:33:22.000Z</published>
+    <updated>2015-04-27T13:34:00.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="github博客搭建">github博客搭建</h2><p>Github  Pages与Hexo</p>
+<ul>
+<li>重点参考：<a href="http://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="external">http://www.cnblogs.com/zhcncn/p/4097881.html</a></li>
+<li>样式主要参考：<a href="http://wsgzao.github.io/post/hexo-jacman/#" target="_blank" rel="external">http://wsgzao.github.io/post/hexo-jacman/#</a></li>
+<li>其他参考<br><a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">http://www.jianshu.com/p/05289a4bc8b2</a><br><a href="http://www.jianshu.com/p/73779eacb494" target="_blank" rel="external">http://www.jianshu.com/p/73779eacb494</a><br><a href="http://zipperary.com/2013/05/29/hexo-guide-3/" target="_blank" rel="external">http://zipperary.com/2013/05/29/hexo-guide-3/</a></li>
+</ul>
+<h2 id="hexo_3-0以后的变化导致的问题">hexo  3.0以后的变化导致的问题</h2><p> <a href="http://blog.csdn.net/wx_962464/article/details/44786929" target="_blank" rel="external">http://blog.csdn.net/wx_962464/article/details/44786929</a></p>
+<h2 id="提交到baidu收录和google收录">提交到baidu收录和google收录</h2><ul>
+<li>Google收录：<a href="http://fionat.github.io/blog/2013/10/23/sitemap/" target="_blank" rel="external">http://fionat.github.io/blog/2013/10/23/sitemap/</a></li>
+<li>百度收录+百度站内搜索：<a href="http://gengbiao.me/hexo/hexo%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/" target="_blank" rel="external">http://gengbiao.me/hexo/hexo%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/</a></li>
+</ul>
+<h2 id="hexo命令">hexo命令</h2><ul>
+<li>hexo new “postName” #新建文章</li>
+<li>hexo new page “pageName” #新建页面</li>
+<li>hexo generate #生成静态页面至public目录</li>
+<li>hexo clean # 清理</li>
+<li>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</li>
+<li>hexo deploy #将.deploy目录部署到GitHub</li>
+<li>hexo help  # 查看帮助</li>
+<li>hexo version  #查看Hexo的版本</li>
+</ul>
+<h2 id="hexo命令简写">hexo命令简写</h2><ul>
+<li>hexo n == hexo new</li>
+<li>hexo g == hexo generate</li>
+<li>hexo s == hexo server</li>
+<li>hexo d == hexo deploy</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="github博客搭建">github博客搭建</h2><p>Github  Pages与Hexo</p>
+<ul>
+<li>重点参考：<a href="http://www.cnblogs.com/zhcncn/p/4097881.html" target="_b]]>
+    </summary>
+    
+      <category term="git" scheme="http://junzhengdi.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Git全局ignore配置]]></title>
@@ -109,12 +153,13 @@
   </entry>
   
   <entry>
-    <title><![CDATA[别做正常的傻瓜-读书笔记1]]></title>
-    <link href="http://junzhengdi.github.io/2015/04/25/noshagua1/"/>
-    <id>http://junzhengdi.github.io/2015/04/25/noshagua1/</id>
+    <title><![CDATA[别做正常的傻瓜-读书笔记]]></title>
+    <link href="http://junzhengdi.github.io/2015/04/25/noshagua/"/>
+    <id>http://junzhengdi.github.io/2015/04/25/noshagua/</id>
     <published>2015-04-25T14:15:13.000Z</published>
-    <updated>2015-04-26T10:18:30.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="零、序言">零、序言</h1><h2 id="1_引文的例子">1 引文的例子</h2><ul>
+    <updated>2015-04-27T13:47:30.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="零、序言">零、序言</h1><p>豆瓣地址:<a href="http://book.douban.com/subject/1874488/" target="_blank" rel="external">http://book.douban.com/subject/1874488/</a></p>
+<h2 id="1_引文的例子">1 引文的例子</h2><ul>
 <li>如果你有一种病5年内有万分之一的概率会死，你愿意花多少钱买药（这种药可以根治此病）？</li>
 <li>如果有一个实验让你试药，这种药物任何副作用，只是在5年内，有万分之一的概率会让你死亡，问你愿意为此向此实验要多少钱？</li>
 <li>两者应完全等价，因为说的都是一回事。是5年内万分之一的死亡率和金钱的权衡。</li>
@@ -170,16 +215,14 @@
 <li>不忍心放过看似合算的交易往往时候让你后悔</li>
 <li>理性决策：只权衡绝对收益和绝对成本</li>
 </ul>
-]]></content>
+<h2 id="待续">待续</h2>]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="零、序言">零、序言</h1><h2 id="1_引文的例子">1 引文的例子</h2><ul>
-<li>如果你有一种病5年内有万分之一的概率会死，你愿意花多少钱买药（这种药可以根治此病）？</li>
-<li>如果有一个实验让你试药，这种药物任何副作用，只是在5年]]>
+    <![CDATA[<h1 id="零、序言">零、序言</h1><p>豆瓣地址:<a href="http://book.douban.com/subject/1874488/" target="_blank" rel="external">http://book.douban.com/subje]]>
     </summary>
     
-      <category term="不做正常的傻瓜" scheme="http://junzhengdi.github.io/tags/%E4%B8%8D%E5%81%9A%E6%AD%A3%E5%B8%B8%E7%9A%84%E5%82%BB%E7%93%9C/"/>
+      <category term="别做正常的傻瓜" scheme="http://junzhengdi.github.io/tags/%E5%88%AB%E5%81%9A%E6%AD%A3%E5%B8%B8%E7%9A%84%E5%82%BB%E7%93%9C/"/>
     
-      <category term="心理" scheme="http://junzhengdi.github.io/tags/%E5%BF%83%E7%90%86/"/>
+      <category term="读书笔记" scheme="http://junzhengdi.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   

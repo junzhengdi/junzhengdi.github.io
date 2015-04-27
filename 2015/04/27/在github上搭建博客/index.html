@@ -4,40 +4,34 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Git全局ignore配置 | 阿正的博客</title>
+    <title>在github上搭建博客 | 阿正的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="阿正">
     
 
     
-    <meta name="description" content=".gitconfig文件
-git默认将全局配置放在当前用户目录下的.gitconfig文件，例如：C:/Users/dijunzheng/.gitconfig 
-编辑，在后边加上
+    <meta name="description" content="github博客搭建Github  Pages与Hexo
 
-12[core]   excludesfile =C:/Users/dijunzheng/.gitignore_global
-.gitignore_global
-新建并配置.gitignore_global，目录就是提">
+重点参考：http://www.cnblogs.com/zhcncn/p/4097881.html
+样式主要参考：http://wsgzao.github.io/post/hexo-jacman/#
+其他参考http://www.jianshu.com/p/05289a4bc8b2http://www.jianshu.com/p/7377">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git全局ignore配置">
-<meta property="og:url" content="http://junzhengdi.github.io/2015/04/27/Git全局ignore配置/index.html">
+<meta property="og:title" content="在github上搭建博客">
+<meta property="og:url" content="http://junzhengdi.github.io/2015/04/27/在github上搭建博客/index.html">
 <meta property="og:site_name" content="阿正的博客">
-<meta property="og:description" content=".gitconfig文件
-git默认将全局配置放在当前用户目录下的.gitconfig文件，例如：C:/Users/dijunzheng/.gitconfig 
-编辑，在后边加上
+<meta property="og:description" content="github博客搭建Github  Pages与Hexo
 
-12[core]   excludesfile =C:/Users/dijunzheng/.gitignore_global
-.gitignore_global
-新建并配置.gitignore_global，目录就是提">
+重点参考：http://www.cnblogs.com/zhcncn/p/4097881.html
+样式主要参考：http://wsgzao.github.io/post/hexo-jacman/#
+其他参考http://www.jianshu.com/p/05289a4bc8b2http://www.jianshu.com/p/7377">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git全局ignore配置">
-<meta name="twitter:description" content=".gitconfig文件
-git默认将全局配置放在当前用户目录下的.gitconfig文件，例如：C:/Users/dijunzheng/.gitconfig 
-编辑，在后边加上
+<meta name="twitter:title" content="在github上搭建博客">
+<meta name="twitter:description" content="github博客搭建Github  Pages与Hexo
 
-12[core]   excludesfile =C:/Users/dijunzheng/.gitignore_global
-.gitignore_global
-新建并配置.gitignore_global，目录就是提">
+重点参考：http://www.cnblogs.com/zhcncn/p/4097881.html
+样式主要参考：http://wsgzao.github.io/post/hexo-jacman/#
+其他参考http://www.jianshu.com/p/05289a4bc8b2http://www.jianshu.com/p/7377">
 
     
     <link rel="alternative" href="/atom.xml" title="阿正的博客" type="application/atom+xml">
@@ -102,14 +96,14 @@ git默认将全局配置放在当前用户目录下的.gitconfig文件，例如�
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/27/Git全局ignore配置/" title="Git全局ignore配置" itemprop="url">Git全局ignore配置</a>
+      <a href="/2015/04/27/在github上搭建博客/" title="在github上搭建博客" itemprop="url">在github上搭建博客</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="阿正" target="_blank" itemprop="author">阿正</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-27T13:24:06.000Z" itemprop="datePublished"> 发表于 2015-04-27</time>
+    <time datetime="2015-04-27T13:33:22.000Z" itemprop="datePublished"> 发表于 2015-04-27</time>
     
   </p>
 </header>
@@ -118,22 +112,38 @@ git默认将全局配置放在当前用户目录下的.gitconfig文件，例如�
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#-gitconfig文件"><span class="toc-number">1.</span> <span class="toc-text">.gitconfig文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-gitignore_global"><span class="toc-number">2.</span> <span class="toc-text">.gitignore_global</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#齐活儿"><span class="toc-number">3.</span> <span class="toc-text">齐活儿</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#github博客搭建"><span class="toc-number">1.</span> <span class="toc-text">github博客搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo_3-0以后的变化导致的问题"><span class="toc-number">2.</span> <span class="toc-text">hexo  3.0以后的变化导致的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提交到baidu收录和google收录"><span class="toc-number">3.</span> <span class="toc-text">提交到baidu收录和google收录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo命令"><span class="toc-number">4.</span> <span class="toc-text">hexo命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo命令简写"><span class="toc-number">5.</span> <span class="toc-text">hexo命令简写</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="-gitconfig文件">.gitconfig文件</h2><ul>
-<li>git默认将全局配置放在当前用户目录下的.gitconfig文件，例如：C:/Users/dijunzheng/.gitconfig </li>
-<li>编辑，在后边加上</li>
+		<h2 id="github博客搭建">github博客搭建</h2><p>Github  Pages与Hexo</p>
+<ul>
+<li>重点参考：<a href="http://www.cnblogs.com/zhcncn/p/4097881.html" target="_blank" rel="external">http://www.cnblogs.com/zhcncn/p/4097881.html</a></li>
+<li>样式主要参考：<a href="http://wsgzao.github.io/post/hexo-jacman/#" target="_blank" rel="external">http://wsgzao.github.io/post/hexo-jacman/#</a></li>
+<li>其他参考<br><a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">http://www.jianshu.com/p/05289a4bc8b2</a><br><a href="http://www.jianshu.com/p/73779eacb494" target="_blank" rel="external">http://www.jianshu.com/p/73779eacb494</a><br><a href="http://zipperary.com/2013/05/29/hexo-guide-3/" target="_blank" rel="external">http://zipperary.com/2013/05/29/hexo-guide-3/</a></li>
 </ul>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[core]   </span><br><span class="line">excludesfile =<span class="constant">C</span><span class="symbol">:/Users/dijunzheng/</span>.gitignore_global</span><br></pre></td></tr></table></figure>
-<h2 id="-gitignore_global">.gitignore_global</h2><ul>
-<li>新建并配置.gitignore_global，目录就是提到的目录</li>
-<li>可能要用git命令 touch .gitignore_global</li>
-<li>内容</li>
+<h2 id="hexo_3-0以后的变化导致的问题">hexo  3.0以后的变化导致的问题</h2><p> <a href="http://blog.csdn.net/wx_962464/article/details/44786929" target="_blank" rel="external">http://blog.csdn.net/wx_962464/article/details/44786929</a></p>
+<h2 id="提交到baidu收录和google收录">提交到baidu收录和google收录</h2><ul>
+<li>Google收录：<a href="http://fionat.github.io/blog/2013/10/23/sitemap/" target="_blank" rel="external">http://fionat.github.io/blog/2013/10/23/sitemap/</a></li>
+<li>百度收录+百度站内搜索：<a href="http://gengbiao.me/hexo/hexo%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/" target="_blank" rel="external">http://gengbiao.me/hexo/hexo%E6%B7%BB%E5%8A%A0%E7%99%BE%E5%BA%A6%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2/</a></li>
 </ul>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">.settings/</span></span><br><span class="line"><span class="title">.svn/</span></span><br><span class="line">bin/</span><br><span class="line"><span class="title">.class</span></span><br><span class="line">logs/</span><br></pre></td></tr></table></figure>
-<h2 id="齐活儿">齐活儿</h2>  
+<h2 id="hexo命令">hexo命令</h2><ul>
+<li>hexo new “postName” #新建文章</li>
+<li>hexo new page “pageName” #新建页面</li>
+<li>hexo generate #生成静态页面至public目录</li>
+<li>hexo clean # 清理</li>
+<li>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</li>
+<li>hexo deploy #将.deploy目录部署到GitHub</li>
+<li>hexo help  # 查看帮助</li>
+<li>hexo version  #查看Hexo的版本</li>
+</ul>
+<h2 id="hexo命令简写">hexo命令简写</h2><ul>
+<li>hexo n == hexo new</li>
+<li>hexo g == hexo generate</li>
+<li>hexo s == hexo server</li>
+<li>hexo d == hexo deploy</li>
+</ul>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -185,19 +195,11 @@ git默认将全局配置放在当前用户目录下的.gitconfig文件，例如�
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/04/27/在github上搭建博客/" title="在github上搭建博客">
-  <strong>上一篇：</strong><br/>
-  <span>
-  在github上搭建博客</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/27/git服务总结/"  title="git服务总结">
+<a href="/2015/04/27/Git全局ignore配置/"  title="Git全局ignore配置">
  <strong>下一篇：</strong><br/> 
- <span>git服务总结
+ <span>Git全局ignore配置
 </span>
 </a>
 </div>
@@ -206,7 +208,7 @@ git默认将全局配置放在当前用户目录下的.gitconfig文件，例如�
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/04/27/Git全局ignore配置/" data-title="Git全局ignore配置" data-url="http://junzhengdi.github.io/2015/04/27/Git全局ignore配置/"></div>
+	<div class="ds-thread" data-thread-key="2015/04/27/在github上搭建博客/" data-title="在github上搭建博客" data-url="http://junzhengdi.github.io/2015/04/27/在github上搭建博客/"></div>
 </section>
 
 
@@ -216,7 +218,7 @@ git默认将全局配置放在当前用户目录下的.gitconfig文件，例如�
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#-gitconfig文件"><span class="toc-number">1.</span> <span class="toc-text">.gitconfig文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-gitignore_global"><span class="toc-number">2.</span> <span class="toc-text">.gitignore_global</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#齐活儿"><span class="toc-number">3.</span> <span class="toc-text">齐活儿</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#github博客搭建"><span class="toc-number">1.</span> <span class="toc-text">github博客搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo_3-0以后的变化导致的问题"><span class="toc-number">2.</span> <span class="toc-text">hexo  3.0以后的变化导致的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提交到baidu收录和google收录"><span class="toc-number">3.</span> <span class="toc-text">提交到baidu收录和google收录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo命令"><span class="toc-number">4.</span> <span class="toc-text">hexo命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo命令简写"><span class="toc-number">5.</span> <span class="toc-text">hexo命令简写</span></a></li></ol>
  
   </div>
 
